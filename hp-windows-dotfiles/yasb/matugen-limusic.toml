@@ -1,0 +1,6 @@
+[config]
+version_check = false
+
+[templates.limusic]
+input_path = "C:\\Users\\YOUR_USERNAME\\.config\\yasb\\matugen-limusic.css"
+output_path = "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\limusic\\matugen.css"

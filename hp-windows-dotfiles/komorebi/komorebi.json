@@ -1,0 +1,70 @@
+{
+  "animation": {
+    "enabled": true,
+    "duration": 180,
+    "fps": 144,
+    "style": "EaseOutCubic",
+    "workspace": {
+      "kind": "SlideFade",
+      "duration": 600,
+      "bezier": [0.05, 0.9, 0.1, 1.05],
+      "backdrop_blur": true,
+      "backdrop_blur_radius": 30,
+      "shadow": true,
+      "border": null
+    },
+    "windows": {
+      "duration": 400,
+      "bezier": [0.05, 0.9, 0.1, 1.05]
+    }
+  },
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 5,
+  "default_container_padding": 5,
+  "transparency": true,
+  "transparency_alpha": 200,
+  "border": false,
+  "border_width": 8,
+  "border_offset": -1,
+  "theme": {
+    "palette": "Base16",
+    "name": "Ashes",
+    "bar_accent": "Base0D"
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "layout": "BSP"
+        },
+        {
+          "name": "III",
+          "layout": "Scrolling"
+        },
+        {
+          "name": "IV",
+          "layout": "Scrolling"
+        },
+        {
+          "name": "V",
+          "layout": "Scrolling"
+        },
+        {
+          "name": "VI",
+          "layout": "BSP"
+        },
+        {
+          "name": "VII",
+          "layout": "BSP"
+        }
+      ]
+    }
+  ]
+}

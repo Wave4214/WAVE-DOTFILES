@@ -1,0 +1,317 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "palette": {
+    "bg": "#000000",
+    "bg-lowest": "#050505",
+    "bg-low": "#0d0d0d",
+    "bg-mid": "#141414",
+    "bg-high": "#1d1d1d",
+    "bg-highest": "#262626",
+    "fg": "#f5f5f5",
+    "fg-dim": "#d9d9d9",
+    "outline": "#9a9a9a",
+    "primary": "#ffffff",
+    "on-primary": "#000000",
+    "primary-ctn": "#f0f0f0",
+    "on-primary-ctn": "#000000",
+    "secondary": "#d9d9d9",
+    "on-secondary": "#111111",
+    "secondary-ctn": "#cfcfcf",
+    "on-secondary-ctn": "#111111",
+    "tertiary": "#bdbdbd",
+    "on-tertiary": "#111111",
+    "tertiary-ctn": "#a6a6a6",
+    "on-tertiary-ctn": "#111111",
+    "error": "#ffffff",
+    "on-error": "#000000",
+    "error-ctn": "#e6e6e6",
+    "inverse": "#ffffff",
+    "on-inverse": "#111111",
+    "inverse-primary": "#f5f5f5"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "p:primary",
+          "foreground": "p:on-primary",
+          "leading_diamond": "╭─",
+          "style": "diamond",
+          "template": " {{ .Name }} ",
+          "type": "shell"
+        },
+        {
+          "background": "p:secondary",
+          "foreground": "p:on-secondary",
+          "style": "diamond",
+          "template": "<parentBackground></>  ",
+          "type": "root"
+        },
+        {
+          "background": "p:secondary",
+          "foreground": "p:on-secondary",
+          "powerline_symbol": "",
+          "properties": {
+            "folder_icon": "  ",
+            "home_icon": "",
+            "style": "folder"
+          },
+          "style": "powerline",
+          "template": "  {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "background": "p:tertiary",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:tertiary{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:error{{ end }}",
+            "{{ if gt .Ahead 0 }}p:primary{{ end }}",
+            "{{ if gt .Behind 0 }}p:secondary{{ end }}"
+          ],
+          "foreground": "p:on-tertiary",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:on-tertiary{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:on-error{{ end }}",
+            "{{ if gt .Ahead 0 }}p:on-primary{{ end }}",
+            "{{ if gt .Behind 0 }}p:on-secondary{{ end }}"
+          ],
+          "powerline_symbol": "",
+          "properties": {
+            "branch_icon": " ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "powerline",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<p:tertiary-ctn>  {{ .Staging.String }}</>{{ end }} ",
+          "type": "git"
+        },
+        {
+          "background": "p:bg-highest",
+          "foreground": "p:fg",
+          "properties": {
+            "style": "roundrock",
+            "threshold": 0
+          },
+          "style": "diamond",
+          "template": "  {{ .FormattedMs }}⠀",
+          "trailing_diamond": "",
+          "type": "executiontime"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "p:bg-lowest",
+          "foreground": "p:primary",
+          "leading_diamond": "",
+          "properties": {
+            "fetch_package_manager": true,
+            "npm_icon": " <p:fg-dim></> ",
+            "yarn_icon": " <p:primary></>"
+          },
+          "style": "diamond",
+          "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "trailing_diamond": " ",
+          "type": "node"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:on-primary",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+          "trailing_diamond": " ",
+          "type": "python"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:on-primary",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": " ",
+          "type": "java"
+        },
+        {
+          "background": "p:bg-lowest",
+          "foreground": "p:primary",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": " {{ if .Unsupported }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": " ",
+          "type": "dotnet"
+        },
+        {
+          "background": "p:inverse",
+          "foreground": "p:inverse-primary",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": " ",
+          "type": "go"
+        },
+        {
+          "background": "p:inverse",
+          "foreground": "p:inverse-primary",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": " ",
+          "type": "rust"
+        },
+        {
+          "background": "p:inverse",
+          "foreground": "p:inverse-primary",
+          "leading_diamond": " ",
+          "style": "diamond",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": " ",
+          "type": "dart"
+        },
+        {
+          "background": "p:inverse",
+          "foreground": "p:on-inverse",
+          "leading_diamond": " ",
+          "style": "diamond",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": " ",
+          "type": "angular"
+        },
+        {
+          "background": "p:bg-highest",
+          "foreground": "p:fg",
+          "leading_diamond": " ",
+          "style": "diamond",
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}Nx {{ .Full }}{{ end }}",
+          "trailing_diamond": " ",
+          "type": "nx"
+        },
+        {
+          "background": "p:secondary",
+          "foreground": "p:on-secondary",
+          "leading_diamond": " ",
+          "style": "diamond",
+          "template": "<p:secondary-ctn></> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": " ",
+          "type": "julia"
+        },
+        {
+          "background": "p:inverse",
+          "foreground": "p:on-inverse",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": " ",
+          "type": "ruby"
+        },
+        {
+          "background": "p:inverse",
+          "foreground": "p:inverse-primary",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": "<p:on-inverse></> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": " ",
+          "type": "azfunc"
+        },
+        {
+          "background": "p:bg-highest",
+          "foreground": "p:fg",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": " {{.Profile}}{{if .Region}}@{{.Region}}{{end}}",
+          "trailing_diamond": " ",
+          "type": "aws"
+        },
+        {
+          "background": "p:tertiary",
+          "foreground": "p:on-tertiary",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": " {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}",
+          "trailing_diamond": "",
+          "type": "kubectl"
+        },
+        {
+          "background": "p:bg-highest",
+          "foreground": "p:fg",
+          "leading_diamond": "",
+          "trailing_diamond": "<transparent,background></>",
+          "properties": {
+            "linux": "",
+            "macos": "",
+            "windows": ""
+          },
+          "style": "diamond",
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "background": "p:secondary",
+          "background_templates": [
+            "{{if eq \"Charging\" .State.String}}p:tertiary{{end}}",
+            "{{if eq \"Discharging\" .State.String}}p:error{{end}}",
+            "{{if eq \"Full\" .State.String}}p:primary{{end}}"
+          ],
+          "foreground": "p:on-secondary",
+          "foreground_templates": [
+            "{{if eq \"Charging\" .State.String}}p:on-tertiary{{end}}",
+            "{{if eq \"Discharging\" .State.String}}p:on-error{{end}}",
+            "{{if eq \"Full\" .State.String}}p:on-primary{{end}}"
+          ],
+          "invert_powerline": true,
+          "powerline_symbol": "",
+          "properties": {
+            "charged_icon": " ",
+            "charging_icon": " ",
+            "discharging_icon": " "
+          },
+          "style": "powerline",
+          "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }} ",
+          "type": "battery"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:on-primary",
+          "invert_powerline": true,
+          "leading_diamond": "",
+          "properties": {
+            "time_format": "_2,15:04"
+          },
+          "style": "diamond",
+          "template": "  {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "p:primary",
+          "style": "plain",
+          "template": "╰─",
+          "type": "text"
+        },
+        {
+          "foreground": "p:fg",
+          "foreground_templates": ["{{ if gt .Code 0 }}p:error{{ end }}"],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": " ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ]
+}

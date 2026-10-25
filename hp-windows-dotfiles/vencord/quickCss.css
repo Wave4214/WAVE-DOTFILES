@@ -1,0 +1,283 @@
+/**
+
+* @name Onyx24
+* @description A pure-black monochrome TUI-style Discord theme based on system24.
+* @author refact0r / Onyx customization
+* @version 2.0.0
+* @invite nz87hXyvcy
+* @website https://github.com/refact0r/system24
+* @source https://github.com/refact0r/system24/blob/master/theme/system24.theme.css
+  */
+
+/* import theme modules */
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+body {
+/* font */
+--font: 'DM Mono';
+--code-font: 'DM Mono';
+
+```
+font-weight: 300;
+letter-spacing: -0.05ch;
+
+/* sizes */
+--gap: 12px;
+--divider-thickness: 4px;
+--border-thickness: 2px;
+--border-hover-transition: 0.2s ease;
+
+/* animation / transition */
+--animations: on;
+--list-item-transition: 0.2s ease;
+--dms-icon-svg-transition: 0.4s ease;
+
+/* top bar */
+--top-bar-height: var(--gap);
+--top-bar-button-position: titlebar;
+--top-bar-title-position: off;
+--subtle-top-bar-title: off;
+
+/* window controls */
+--custom-window-controls: off;
+--window-control-size: 14px;
+
+/* DMs */
+--custom-dms-icon: off;
+--dms-icon-svg-url: url('');
+--dms-icon-svg-size: 90%;
+--dms-icon-color-before: var(--icon-secondary);
+--dms-icon-color-after: var(--white);
+
+--custom-dms-background: off;
+--dms-background-image-url: url('');
+--dms-background-image-size: cover;
+--dms-background-color: #000000;
+
+/* background image */
+--background-image: off;
+--background-image-url: url('');
+
+/* transparency / blur */
+--transparency-tweaks: off;
+--remove-bg-layer: off;
+--panel-blur: off;
+--blur-amount: 12px;
+--bg-floating: var(--bg-3);
+
+/* user panel */
+--small-user-panel: on;
+
+/* unrounding */
+--unrounding: on;
+
+/* styling */
+--custom-spotify-bar: on;
+--ascii-titles: on;
+--ascii-loader: system24;
+
+/* panel labels */
+--panel-labels: on;
+--label-color: var(--text-muted);
+--label-font-weight: 500;
+```
+
+}
+
+/* =========================================================
+ONYX COLOR SYSTEM
+========================================================= */
+
+:root {
+--colors: on;
+
+```
+/* -----------------------------------------------------
+   TEXT
+   ----------------------------------------------------- */
+
+--text-0: #000000;
+--text-1: #FFFFFF;
+--text-2: #E5E5E5;
+--text-3: #C4C4C4;
+--text-4: #8A8A8A;
+--text-5: #555555;
+
+
+/* -----------------------------------------------------
+   PURE BLACK BACKGROUNDS
+   ----------------------------------------------------- */
+
+--bg-1: #1A1A1A;
+--bg-2: #111111;
+--bg-3: #080808;
+--bg-4: #000000;
+
+--hover: rgba(255, 255, 255, 0.06);
+--active: rgba(255, 255, 255, 0.10);
+--active-2: rgba(255, 255, 255, 0.15);
+
+--message-hover: var(--hover);
+
+
+/* -----------------------------------------------------
+   ONYX ACCENT
+   ----------------------------------------------------- */
+
+--accent-1: #FFFFFF;
+--accent-2: #FFFFFF;
+--accent-3: #E5E5E5;
+--accent-4: #FFFFFF;
+--accent-5: #CFCFCF;
+
+--accent-new: #FFFFFF;
+
+
+/* -----------------------------------------------------
+   MENTIONS / REPLIES
+   ----------------------------------------------------- */
+
+--mention:
+    linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.10) 40%,
+        transparent
+    );
+
+--mention-hover:
+    linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.05) 40%,
+        transparent
+    );
+
+--reply:
+    linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.08) 40%,
+        transparent
+    );
+
+--reply-hover:
+    linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.04) 40%,
+        transparent
+    );
+
+
+/* -----------------------------------------------------
+   STATUS COLORS
+   Kept recognizable while the UI remains monochrome.
+   ----------------------------------------------------- */
+
+--online: #8FAF8F;
+--dnd: #B56B6B;
+--idle: #B5A06B;
+--streaming: #8C7BAF;
+--offline: #555555;
+
+
+/* -----------------------------------------------------
+   BORDERS
+   ----------------------------------------------------- */
+
+--border-light: rgba(255, 255, 255, 0.06);
+--border: rgba(255, 255, 255, 0.10);
+--border-hover: #FFFFFF;
+--button-border: rgba(255, 255, 255, 0.10);
+
+
+/* =====================================================
+   MONOCHROME COLOR SCALE
+   ===================================================== */
+
+/* RED */
+--red-1: #E5E5E5;
+--red-2: #D0D0D0;
+--red-3: #B8B8B8;
+--red-4: #909090;
+--red-5: #707070;
+
+/* GREEN */
+--green-1: #E5E5E5;
+--green-2: #D0D0D0;
+--green-3: #B8B8B8;
+--green-4: #909090;
+--green-5: #707070;
+
+/* BLUE */
+--blue-1: #E5E5E5;
+--blue-2: #D0D0D0;
+--blue-3: #B8B8B8;
+--blue-4: #909090;
+--blue-5: #707070;
+
+/* YELLOW */
+--yellow-1: #E5E5E5;
+--yellow-2: #D0D0D0;
+--yellow-3: #B8B8B8;
+--yellow-4: #909090;
+--yellow-5: #707070;
+
+/* PURPLE */
+--purple-1: #E5E5E5;
+--purple-2: #D0D0D0;
+--purple-3: #B8B8B8;
+--purple-4: #909090;
+--purple-5: #707070;
+```
+
+}
+
+/* BEGIN wallpaper theme palette */
+/* Managed palette: do not edit this block by hand. */
+:root {
+    --text-0: #161217;
+    --text-1: #eae0e7;
+    --text-2: #eae0e7;
+    --text-3: #eae0e7;
+    --text-4: #231e23;
+    --text-5: #231e23;
+    --bg-1: #2d282e;
+    --bg-2: #231e23;
+    --bg-3: #161217;
+    --bg-4: #110d12;
+    --accent-1: #e5b6f2;
+    --accent-2: #e5b6f2;
+    --accent-3: #514254;
+    --accent-4: #e5b6f2;
+    --accent-5: #663b39;
+    --accent-new: #e5b6f2;
+    --online: #f5b7b4;
+    --dnd: #ffb4ab;
+    --idle: #d5c0d7;
+    --streaming: #663b39;
+    --offline: #231e23;
+    --red-1: #ffb4ab;
+    --red-2: #ffb4ab;
+    --red-3: #ffb4ab;
+    --red-4: #ffb4ab;
+    --red-5: #ffb4ab;
+    --green-1: #f5b7b4;
+    --green-2: #f5b7b4;
+    --green-3: #f5b7b4;
+    --green-4: #f5b7b4;
+    --green-5: #f5b7b4;
+    --blue-1: #e5b6f2;
+    --blue-2: #e5b6f2;
+    --blue-3: #e5b6f2;
+    --blue-4: #e5b6f2;
+    --blue-5: #e5b6f2;
+    --yellow-1: #d5c0d7;
+    --yellow-2: #d5c0d7;
+    --yellow-3: #d5c0d7;
+    --yellow-4: #d5c0d7;
+    --yellow-5: #d5c0d7;
+    --purple-1: #663b39;
+    --purple-2: #663b39;
+    --purple-3: #663b39;
+    --purple-4: #663b39;
+    --purple-5: #663b39;
+}
+/* END wallpaper theme palette */

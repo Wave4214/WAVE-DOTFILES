@@ -1,0 +1,1526 @@
+@import "matugen_colors.css";
+
+:root {
+    --base: var(--theme-background);
+    --mantle: var(--theme-mantle);
+    --crust: var(--theme-crust);
+    --text: var(--theme-foreground);
+    --subtext0: var(--theme-subtext);
+    --subtext1: var(--theme-subtext);
+    --surface0: var(--theme-surface);
+    --surface1: var(--theme-surface-raised);
+    --surface2: var(--theme-surface-raised);
+    --teal: var(--theme-accent);
+    --blue: var(--theme-color4);
+    --sapphire: var(--theme-color6);
+    --red: var(--theme-color1);
+    --green: var(--theme-color2);
+    --yellow: var(--theme-color3);
+    --peach: var(--theme-color3);
+    --pink: var(--theme-color5);
+    --sky: var(--theme-color6);
+    --overlay0: var(--theme-color8);
+    --overlay1: var(--theme-subtext);
+    --borderWidth: 2px;
+}
+
+* {
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 600;
+    font-family: "JetBrainsMono NFP";
+}
+
+.yasb-bar {
+    padding: 0;
+    margin: 0;
+    background-color: var(--crust);
+}
+
+.widget {
+    padding: 0 12px;
+    margin: 0;
+}
+
+.icon {
+    font-size: 16px;
+}
+
+.widget .label {
+    padding: 0px 2px;
+}
+
+.apps-widget {
+    padding: 0 4px 0 2px;
+}
+
+.komorebi-active-layout {
+    padding: 0 4px 0 0;
+}
+
+.komorebi-active-layout .label {
+    font-weight: 600;
+    padding: 2px 0 0 0;
+    /* CHANGED: Make layout label pop */
+    color: var(--teal);
+}
+
+/* WIDGET CONTAINERS - These get colors from your script now */
+.apps-widget .widget-container,
+.komorebi-workspaces .widget-container,
+.komorebi-active-layout .widget-container {
+    background-color: var(--surface0);
+    margin: 4px 0 4px 0;
+    border-radius: 12px;
+    border: 1px solid var(--surface1);
+    padding: 0 8px;
+}
+
+.komorebi-workspaces .widget-container {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    margin-left: 4px;
+}
+
+.apps-widget .widget-container,
+.komorebi-workspaces .widget-container {
+    background-color: transparent;
+    border: none;
+}
+
+.komorebi-workspaces {
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    padding: 0 4px 0 0;
+}
+
+.komorebi-workspaces .offline-status {
+    color: var(--surface2);
+    font-size: 12px;
+    padding: 0 0 0 4px;
+    font-weight: 600;
+}
+
+.komorebi-workspaces .ws-btn {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    font-size: 12px;
+    /* This is the color for empty workspaces */
+    color: var(--teal) !important;
+    height: 28px;
+    width: 18px;
+}
+
+.komorebi-workspaces .ws-btn:hover {
+    color: var(--text) !important;
+}
+
+.komorebi-workspaces .ws-btn.populated {
+    color: transparent !important;
+    width: 10px !important;
+    height: 10px !important;
+
+    /* CHANGE: Using 50% ensures a perfect circle */
+    border-radius: 5px !important;
+
+    /* CHANGE: Using teal so it matches your other widgets */
+    background-color: var(--teal) !important;
+    margin: 0 4px !important;
+}
+
+.komorebi-workspaces .ws-btn.active {
+    color: transparent !important;
+    background-color: var(--teal) !important;
+    /* This pill shape is already rounded at 5px for its 10px height */
+    width: 36px;
+    height: 10px;
+    margin: 0 4px;
+    border-radius: 5px;
+}
+
+.apps-widget .label {
+    font-size: 14px;
+    padding: 0 2px;
+    /* Ensure this is using your theme accent */
+    color: var(--teal) !important;
+}
+
+.apps-widget .label:hover {
+    color: var(--text);
+}
+
+.uptime {
+    font-size: 14px;
+    margin-bottom: 10px;
+    /* CHANGED: Was surface2 (dark). Now Teal for visibility */
+    color: var(--teal);
+    font-weight: 600;
+}
+
+.power-menu-widget .label {
+    /* Highlight the power-menu icon with the theme accent. */
+    color: var(--pink);
+    font-size: 13px;
+}
+
+.power-menu-popup {
+    background-color: transparent;
+}
+
+.power-menu-popup .button {
+    padding: 0;
+    width: 180px;
+    height: 230px;
+    border-radius: 8px;
+    background-color: var(--mantle);
+    color: var(--text);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    margin: 0px;
+}
+
+.power-menu-popup .button.hover {
+    background-color: var(--surface0);
+    border-color: var(--surface0);
+}
+
+.power-menu-popup .button .label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.power-menu-popup .button .icon {
+    font-size: 64px;
+    padding-top: 32px;
+    color: var(--subtext1);
+}
+
+.power-menu-popup .button.cancel .icon {
+    padding: 0;
+    margin: 0;
+}
+
+.power-menu-popup .button.cancel .label {
+    color: var(--red);
+    margin: 0;
+}
+
+.power-menu-popup .button.cancel {
+    height: 32px;
+    border-radius: 4px;
+}
+
+.volume-widget .icon {
+    color: var(--sky);
+    margin: 1px 2px 0 0;
+}
+
+.volume-widget .label {
+    color: var(--sky);
+    margin: 1px 2px 0 0;
+}
+
+.github-widget .icon {
+    font-size: 14px;
+    color: var(--text);
+}
+
+.github-widget .icon.new-notification {
+    color: var(--red);
+}
+
+.weather-widget,
+.github-widget,
+.volume-widget {
+    padding: 0 6px;
+}
+
+/* WIFI MENU */
+.wifi-menu {
+    font-family: 'Segoe UI';
+    background-color: var(--crust);
+    max-height: 350px;
+    min-height: 375px;
+    min-width: 375px;
+    border: 1px solid var(--surface0);
+}
+
+.wifi-menu .progress-bar {
+    max-height: 2px;
+}
+
+.wifi-menu .progress-bar::chunk {
+    background-color: var(--sapphire);
+}
+
+.wifi-menu .header {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: var(--mantle);
+    color: var(--text);
+    border-bottom: 1px solid var(--surface0);
+}
+
+.wifi-menu .error-message {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: var(--red);
+    color: var(--base);
+    border-bottom: 1px solid var(--surface0);
+}
+
+.wifi-menu .wifi-list {
+    background-color: var(--base);
+    margin-right: 3px;
+}
+
+.wifi-menu .wifi-item {
+    min-height: 35px;
+    padding: 2px 12px;
+    margin: 2px 4px;
+}
+
+.wifi-menu .wifi-item:hover {
+    background-color: var(--surface0);
+    border-radius: 6px;
+}
+
+.wifi-menu .wifi-item[active=true] {
+    background-color: var(--surface1);
+    font-size: 14px;
+    border-radius: 6px;
+    min-height: 80px;
+}
+
+.wifi-menu .wifi-item .icon {
+    font-family: 'Segoe Fluent Icons';
+    font-size: 26px;
+    margin-right: 10px;
+    color: var(--blue);
+}
+
+.wifi-menu .wifi-item .name {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    margin-right: 10px;
+    color: var(--text);
+}
+
+.wifi-menu .wifi-item .password {
+    font-family: 'Segoe UI';
+    background-color: transparent;
+    font-size: 14px;
+    color: var(--subtext0);
+}
+
+.wifi-menu .wifi-item .status {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    color: var(--subtext1);
+}
+
+.wifi-menu .wifi-item .strength {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    color: var(--teal);
+}
+
+.wifi-menu .wifi-item .controls-container {
+    padding-top: 8px;
+}
+
+.wifi-menu .wifi-item .connect {
+    background-color: var(--surface0);
+    color: var(--text);
+    padding: 4px 30px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .connect:hover {
+    background-color: var(--surface1);
+}
+
+.wifi-menu .wifi-item .connect:pressed {
+    background-color: var(--surface2);
+}
+
+.wifi-menu .footer {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px;
+    margin-top: 2px;
+    color: var(--subtext0);
+    background-color: var(--mantle);
+    border-top: 1px solid var(--surface0);
+}
+
+.wifi-menu .footer .settings-button {
+    font-family: 'Segoe UI';
+    background-color: transparent;
+    border: none;
+    padding: 0 2px;
+    min-width: 26px;
+    min-height: 26px;
+    color: var(--text);
+}
+
+.wifi-menu .footer .refresh-icon {
+    font-family: 'Segoe Fluent Icons';
+    background-color: transparent;
+    border: none;
+    min-width: 26px;
+    min-height: 26px;
+    color: var(--text);
+}
+
+.wifi-menu .footer .refresh-icon:hover {
+    background-color: var(--surface1);
+    border-radius: 4px;
+}
+
+/* BLUETOOTH MENU */
+.bluetooth-menu {
+    font-family: 'Segoe UI';
+    background-color: var(--crust);
+    max-height: 450px;
+    min-height: 375px;
+    min-width: 375px;
+    border: 1px solid var(--surface0);
+}
+
+.bluetooth-menu .header {
+    padding: 12px;
+    background-color: var(--mantle);
+    border-bottom: 1px solid var(--surface0);
+}
+
+.bluetooth-menu .header .title {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.bluetooth-menu .header .power-button {
+    background-color: var(--surface0);
+    border: none;
+    border-radius: 4px;
+    color: var(--text);
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+}
+
+.bluetooth-menu .header .power-button:checked {
+    background-color: var(--teal);
+    color: var(--base);
+}
+
+.bluetooth-menu .header .progress-bar {
+    max-height: 2px;
+}
+
+.bluetooth-menu .header .progress-bar::chunk {
+    background-color: var(--teal);
+}
+
+.bluetooth-menu .error-message {
+    padding: 12px;
+    background-color: var(--red);
+    border-bottom: 1px solid var(--surface0);
+    color: var(--base);
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.bluetooth-menu .bluetooth-list,
+.bluetooth-menu .section {
+    background-color: var(--base);
+}
+
+.bluetooth-menu .section-title {
+    padding: 10px 12px 4px;
+    color: var(--subtext0);
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bluetooth-menu .bluetooth-item {
+    min-height: 44px;
+    padding: 6px 12px;
+    margin: 2px 4px;
+    border-radius: 6px;
+}
+
+.bluetooth-menu .bluetooth-item:hover {
+    background-color: var(--surface0);
+}
+
+.bluetooth-menu .bluetooth-item.active {
+    background-color: var(--surface1);
+}
+
+.bluetooth-menu .bluetooth-item .icon,
+.bluetooth-menu .bluetooth-item .battery-icon {
+    font-family: 'Segoe Fluent Icons';
+    font-weight: 400;
+}
+
+.bluetooth-menu .bluetooth-item .icon {
+    min-width: 28px;
+    margin-right: 10px;
+    color: var(--blue);
+    font-size: 22px;
+}
+
+.bluetooth-menu .bluetooth-item .name {
+    margin-right: 10px;
+    color: var(--text);
+    font-family: 'Segoe UI';
+    font-size: 14px;
+}
+
+.bluetooth-menu .bluetooth-item .status {
+    color: var(--subtext1);
+    font-family: 'Segoe UI';
+    font-size: 12px;
+}
+
+.bluetooth-menu .bluetooth-item .battery {
+    padding-right: 6px;
+    color: var(--teal);
+    font-family: 'Segoe UI';
+    font-size: 13px;
+}
+
+.bluetooth-menu .bluetooth-item .battery-icon {
+    color: var(--teal);
+    font-size: 18px;
+}
+
+.bluetooth-menu .bluetooth-item .controls-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.bluetooth-menu .bluetooth-item .connect {
+    padding: 4px 30px;
+    background-color: var(--surface0);
+    border: none;
+    border-radius: 4px;
+    color: var(--text);
+    font-family: 'Segoe UI';
+    font-size: 14px;
+}
+
+.bluetooth-menu .bluetooth-item .connect:hover {
+    background-color: var(--surface1);
+}
+
+.bluetooth-menu .footer {
+    padding: 12px;
+    margin-top: 2px;
+    background-color: var(--mantle);
+    border-top: 1px solid var(--surface0);
+}
+
+.bluetooth-menu .footer .settings-button,
+.bluetooth-menu .footer .scan-icon {
+    min-width: 26px;
+    min-height: 26px;
+    background-color: transparent;
+    border: none;
+    color: var(--text);
+}
+
+.bluetooth-menu .footer .settings-button {
+    padding: 0 2px;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+}
+
+.bluetooth-menu .footer .scan-icon {
+    border-radius: 4px;
+    font-family: 'Segoe Fluent Icons';
+    font-size: 16px;
+}
+
+.bluetooth-menu .footer .scan-icon:hover {
+    background-color: var(--surface1);
+}
+
+/* AUDIO MENU */
+.audio-menu {
+    min-width: 300px;
+    background-color: var(--crust);
+    border: 1px solid var(--surface0);
+    border-radius: 6px;
+}
+
+.audio-menu .system-volume-container .volume-slider {
+    border: none;
+}
+
+.audio-menu .audio-container .device {
+    padding: 6px 8px 6px 4px;
+    margin: 2px 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.audio-menu .audio-container .device.selected {
+    background-color: var(--surface1);
+    color: var(--text);
+}
+
+.audio-menu .audio-container .device:hover,
+.audio-menu .audio-container .device.selected:hover {
+    background-color: var(--surface0);
+    color: var(--text);
+}
+
+.audio-menu .toggle-apps {
+    min-height: 24px;
+    min-width: 24px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+}
+
+.audio-menu .toggle-apps.expanded {
+    background-color: transparent;
+}
+
+.audio-menu .toggle-apps:hover {
+    background-color: var(--surface0);
+}
+
+.audio-menu .apps-container {
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: var(--crust);
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    margin-right: 8px;
+    border-radius: 6px;
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container:hover {
+    background-color: var(--surface0);
+}
+
+/* VS CODE MENU */
+.vscode-menu {
+    min-width: 360px;
+    max-height: 500px;
+    background-color: var(--crust);
+    border: 1px solid var(--surface0);
+    border-radius: 6px;
+}
+
+.vscode-menu .header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--surface0);
+    background-color: transparent;
+}
+
+.vscode-menu .header .title {
+    color: var(--text);
+    font-family: 'Segoe UI';
+    font-weight: 600;
+}
+
+.vscode-menu .header .filter-button {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--subtext0);
+    font-family: 'Segoe UI';
+}
+
+.vscode-menu .header .filter-button:hover,
+.vscode-menu .header .filter-button.active {
+    background-color: var(--surface1);
+    color: var(--text);
+}
+
+.vscode-menu .search-bar {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--surface0);
+    background-color: transparent;
+}
+
+.vscode-menu .search-bar .input {
+    padding: 6px 8px;
+    border: 1px solid var(--surface0);
+    border-radius: 4px;
+    background-color: var(--mantle);
+    color: var(--text);
+    font-family: 'Segoe UI';
+}
+
+.vscode-menu .search-bar .input:focus {
+    border-color: var(--teal);
+}
+
+.vscode-menu .contents {
+    background-color: transparent;
+}
+
+.vscode-menu .contents .item {
+    min-height: 36px;
+    margin: 2px 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.vscode-menu .contents .item:hover {
+    background-color: var(--mantle);
+}
+
+.vscode-menu .contents .item .title {
+    color: var(--text);
+    font-family: 'Segoe UI';
+}
+
+.vscode-menu .contents .item .modified-date {
+    color: var(--subtext0);
+    font-family: 'Segoe UI';
+}
+
+.vscode-menu .contents .item .folder-icon,
+.vscode-menu .contents .item .file-icon,
+.vscode-menu .contents .item .remote-icon {
+    margin-right: 8px;
+    color: var(--teal);
+}
+
+.vscode-menu .no-recent {
+    padding: 16px;
+    color: var(--subtext0);
+    font-family: 'Segoe UI';
+}
+
+/* --- WIDGET COLORS --- */
+/* UPDATED to use brighter/lighter colors */
+
+.memory .recycle-bin-widget .label {
+    color: var(--yellow);
+}
+
+.recycle-bin-widget .icon {
+    color: var(--teal);
+}
+
+.recycle-bin-widget .label {
+    color: var(--sky);
+}
+
+.clock-widget .label {
+    /* Keeping this Teal as you requested */
+    color: var(--teal);
+}
+
+.apps-widget .label {
+    /* CHANGED: Was yellow. Teal matches clock. */
+    color: var(--teal);
+}
+
+.memory-widget .icon {
+    color: var(--sky);
+}
+
+.memory-widget .label {
+    /* CHANGED: Maroon is dark. Pink is bright. */
+    color: var(--sky);
+}
+
+.wifi-widget {
+    border-bottom: 2px solid var(--pink);
+}
+
+.wifi-widget .icon,
+.wifi-widget .label {
+    color: var(--pink);
+}
+
+.battery-widget {
+    border-bottom: var(--borderWidth) solid var(--green);
+}
+
+.battery-widget .icon,
+.battery-widget .label {
+    color: var(--green);
+}
+
+.bluetooth-widget {
+    border-bottom: 2px solid var(--blue);
+}
+
+.bluetooth-widget .icon,
+.bluetooth-widget .label {
+    color: var(--blue);
+}
+
+.volume-widget {
+    border-bottom: 2px solid var(--sky);
+}
+
+.volume-widget .icon,
+.volume-widget .label {
+    color: var(--sky);
+}
+
+.bluetooth-widget .icon.bt-off,
+.bluetooth-widget .label.bt-off {
+    color: var(--subtext0);
+}
+
+.weather-widget .icon {
+    color: var(--teal);
+}
+
+.weather-widget .label {
+    color: var(--sky);
+}
+
+/* WEATHER CARD */
+.weather-card {
+    background-color: var(--crust);
+    border: 1px solid var(--surface0);
+}
+
+.weather-card-today {
+    border: 1px solid var(--surface1);
+    border-radius: 8px;
+    background-color: var(--mantle);
+}
+
+.weather-card-today .label {
+    font-size: 12px;
+    color: var(--text);
+}
+
+.weather-card-today .label.location {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--blue);
+}
+
+.weather-card-today .label.alert {
+    font-size: 12px;
+    font-weight: 700;
+    background-color: var(--surface0);
+    border: 1px solid var(--yellow);
+    color: var(--yellow);
+    border-radius: 6px;
+    padding: 5px 0;
+}
+
+.weather-card-day {
+    border: 1px solid var(--surface1);
+    border-radius: 8px;
+    background-color: var(--mantle);
+}
+
+.weather-card-day.active {
+    background-color: var(--surface0);
+    border: 1px solid var(--blue);
+}
+
+.weather-card-day:hover {
+    background-color: var(--surface0);
+}
+
+.weather-card-day .label {
+    font-size: 12px;
+    color: var(--text);
+}
+
+.weather-card .hourly-container {
+    border: 1px solid var(--surface1);
+    background-color: var(--mantle);
+    border-radius: 8px;
+    min-height: 150px;
+}
+
+.weather-card .hourly-data {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.weather-card .hourly-data.temperature {
+    background-color: var(--yellow);
+}
+
+.weather-card .hourly-data.rain {
+    background-color: var(--blue);
+}
+
+.weather-card .hourly-data.snow {
+    background-color: var(--sky);
+}
+
+.weather-card .hourly-data .hourly-rain-animation {
+    color: var(--blue);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.weather-card .hourly-data .hourly-snow-animation {
+    color: var(--text);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.weather-card .hourly-data-buttons {
+    margin: 0px;
+}
+
+.weather-card .hourly-data-button {
+    border-radius: 4px;
+    min-height: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    font-size: 14px;
+    color: var(--overlay0);
+    border: 1px solid transparent;
+}
+
+.weather-card .hourly-data-button.active {
+    color: var(--text);
+    background-color: var(--surface1);
+    border: 1px solid var(--surface2);
+}
+
+.taskbar-widget {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.taskbar-widget .widget-container {
+    padding: 0 8px;
+}
+
+.taskbar-widget .app-container {
+    padding: 0 6px;
+    border: none;
+    margin: 0;
+}
+
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
+    color: var(--text);
+}
+
+.taskbar-widget .app-container.foreground {
+    background-color: var(--surface1);
+}
+
+.taskbar-widget .app-container.flashing {
+    background-color: var(--red);
+}
+
+.whkd-widget .icon {
+    font-size: 14px;
+    color: var(--text);
+}
+
+.wallpapers-widget .icon {
+    color: var(--yellow);
+}
+
+.wallpapers-widget {
+    padding: 0 6px 0 6px;
+}
+
+.wallpapers-gallery-window {
+    background-color: var(--base);
+    border: 0;
+    margin: 0;
+}
+
+.wallpapers-gallery-buttons {
+    background-color: transparent;
+    color: var(--text);
+    border: none;
+    font-size: 14px;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin: 0 8px 8px 8px;
+    width: 600px;
+}
+
+.wallpapers-gallery-buttons:hover {
+    background-color: var(--surface0);
+}
+
+.wallpapers-gallery-image {
+    border: 4px solid transparent;
+    border-radius: 10px;
+}
+
+.wallpapers-gallery-image:hover {
+    border: 4px solid var(--sapphire);
+}
+
+.wallpapers-gallery-image.focused {
+    border: 4px solid var(--sapphire);
+}
+
+/* --- UPDATED UPDATE-CHECK-WIDGET --- */
+.update-check-widget {
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.update-check-widget .icon {
+    font-size: 14px;
+}
+
+.update-check-widget .widget-container.winget,
+.update-check-widget .widget-container.windows {
+    /* Using your original margin/radius logic for 'perfect pillness' */
+    background: var(--teal) !important;
+    margin: 7px 2px;
+    border-radius: 9px;
+    border: 2px solid var(--teal);
+    /* Matches background for a seamless pill */
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+}
+
+/* Ensure the Windows container also uses the teal theme */
+.update-check-widget .widget-container.windows {
+    background: var(--teal) !important;
+    border: 2px solid var(--teal) !important;
+}
+
+.update-check-widget .widget-container.winget .icon,
+.update-check-widget .widget-container.windows .icon {
+    color: var(--base) !important;
+    margin: 0 1px 0 6px;
+}
+
+.update-check-widget .widget-container.winget .label,
+.update-check-widget .widget-container.windows .label {
+    margin: 0 6px 0 1px;
+    color: var(--base) !important;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+
+.home-widget .icon {
+    color: var(--teal) !important;
+}
+
+.home-widget .icon :hover {
+    color: var(--base) !important;
+}
+
+.home-menu {
+    /* CHANGE: Fixed typo from --lavendera to --mantle or --crust */
+    background-color: var(--mantle) !important;
+    border-radius: 8px;
+    border: 1px solid var(--surface1);
+}
+
+.home-menu .menu-item {
+    padding: 8px 48px 9px 16px;
+    font-size: 12px;
+    font-family: 'Segoe UI';
+    color: var(--teal);
+    font-weight: 600;
+}
+
+.home-menu .menu-item:hover {
+    background-color: var(--surface0);
+    color: var(--text);
+}
+
+.home-menu .separator {
+    max-height: 1px;
+    background-color: var(--surface0);
+}
+
+/* MEDIA WIDGET */
+.media-widget {
+    padding: 0;
+    padding-left: 2px;
+    margin: 0;
+    border-radius: 50px;
+    margin-right: 8px;
+}
+
+.media-widget .label {
+    color: var(--text);
+    background-color: transparent;
+}
+
+.media-widget .btn {
+    color: var(--subtext0);
+    padding: 0 3px;
+    margin: 4px 0;
+    font-family: Segoe Fluent Icons;
+}
+
+.media-widget .btn:hover {
+    color: var(--blue);
+}
+
+.media-widget .btn.play {
+    background-color: var(--surface1);
+    border-radius: 14px;
+    font-size: 16px;
+}
+
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+    color: var(--surface1);
+    font-size: 12px;
+    background-color: transparent;
+}
+
+.media-menu {
+    min-width: 440px;
+    max-width: 440px;
+    background-color: var(--base);
+    border: 1px solid var(--surface1);
+    border-radius: 10px;
+}
+
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+    font-family: "Segoe UI Variable", "Segoe UI";
+    color: var(--text);
+}
+
+.media-menu .artist {
+    font-size: 13px;
+    color: var(--subtext0);
+    margin-top: 0;
+}
+
+.media-menu .source {
+    font-size: 11px;
+    color: var(--base);
+    border-radius: 3px;
+    background-color: var(--teal);
+    padding: 2px 4px;
+    font-weight: 600;
+    font-family: "Segoe UI Variable", "Segoe UI";
+    margin-top: 10px;
+}
+
+.media-menu .source.aimp {
+    background-color: #6f42c1;
+    color: #ffffff;
+}
+
+.media-menu .source.apple-music {
+    background-color: #fa2b56;
+    color: #ffffff;
+}
+
+.media-menu .source.brave {
+    background-color: #fb542b;
+    color: #ffffff;
+}
+
+.media-menu .source.chrome {
+    background-color: #4285f4;
+    color: #ffffff;
+}
+
+.media-menu .source.edge {
+    background-color: #0078d4;
+    color: #ffffff;
+}
+
+.media-menu .source.firefox {
+    background-color: #ff7139;
+    color: #ffffff;
+}
+
+.media-menu .source.foobar2000 {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+.media-menu .source.media-player {
+    background-color: #0078d4;
+    color: #ffffff;
+}
+
+.media-menu .source.murglar {
+    background-color: #8a8a8a;
+    color: #ffffff;
+}
+
+.media-menu .source.musicbee {
+    background-color: #ffcc00;
+    color: #000000;
+}
+
+.media-menu .source.nsmusics {
+    background-color: #e64a19;
+    color: #ffffff;
+}
+
+.media-menu .source.opera {
+    background-color: #ff1b2d;
+    color: #ffffff;
+}
+
+.media-menu .source.qobuz {
+    background-color: #003a6f;
+    color: #ffffff;
+}
+
+.media-menu .source.spotify {
+    background-color: #1db954;
+    color: #ffffff;
+}
+
+.media-menu .source.tidal {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.media-menu .source.winamp {
+    background-color: #f1a11b;
+    color: #000000;
+}
+
+.media-menu .source.youtube {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+.media-menu .source.youtube-music {
+    background-color: #c51f1f;
+    color: #ffffff;
+}
+
+.media-menu .source.zen {
+    background-color: #2ecc71;
+    color: #000000;
+}
+
+.media-menu .btn {
+    font-family: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo";
+    font-size: 14px;
+    font-weight: 600;
+    margin: 10px 2px 0;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border-radius: 20px;
+    color: var(--base);
+    background-color: var(--teal);
+}
+
+.media-menu .btn.prev {
+    margin-left: 10px;
+}
+
+.media-menu .btn:hover {
+    color: var(--base);
+    background-color: var(--surface1);
+}
+
+.media-menu .btn.play {
+    font-size: 20px;
+}
+
+.media-menu .btn.disabled {
+    background-color: var(--surface0);
+    color: var(--base);
+}
+
+.media-menu .playback-time {
+    font-size: 13px;
+    font-family: "Segoe UI Variable", "Segoe UI";
+    color: var(--subtext1);
+    margin-top: 20px;
+    min-width: 100px;
+}
+
+.media-menu .progress-slider {
+    height: 10px;
+    margin: 5px 4px;
+    border-radius: 3px;
+}
+
+.media-menu .progress-slider::groove {
+    background: var(--surface0);
+    height: 2px;
+    border-radius: 3px;
+}
+
+.media-menu .progress-slider::groove:hover {
+    background: var(--surface0);
+    height: 6px;
+    border-radius: 3px;
+}
+
+.media-menu .progress-slider::sub-page {
+    background: var(--teal);
+    border-radius: 3px;
+    height: 4px;
+}
+
+/* CALENDAR */
+.calendar {
+    background-color: var(--crust);
+}
+
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: transparent;
+    color: var(--subtext0);
+    font-family: 'Segoe UI';
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.calendar .calendar-table::item:selected {
+    color: var(--base);
+    background-color: var(--blue);
+    border-radius: 10px;
+}
+
+.calendar .day-label {
+    margin-top: 20px;
+}
+
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label,
+.calendar .week-label,
+.calendar .holiday-label {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    color: var(--text);
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.calendar .week-label,
+.calendar .holiday-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--subtext1);
+}
+
+.calendar .holiday-label {
+    color: var(--subtext1);
+    font-weight: 700;
+}
+
+.calendar .month-label {
+    font-weight: normal;
+}
+
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: var(--text);
+    margin-top: -20px;
+}
+
+.active-window-widget .widget-container .label {
+    color: var(--sky);
+}
+
+/* Launcher */
+/* Quick Launch Widget */
+.quick-launch-widget .icon {
+	font-size: var(--fontSize);
+	padding: 0 4px;
+    color: var(--teal);
+}
+
+/* Quick Launch Popup - main window */
+
+.quick-launch-popup .container {
+	background-color: var(--crust);
+    border: 1px solid var(--surface0);
+    border-radius: 6px;
+}
+/* Search bar container */
+.quick-launch-popup .search {
+	padding: 12px 16px;
+	background-color: transparent;
+	border-bottom: 1px solid var(--surface0);
+}
+/* Search loader line color */
+.quick-launch-popup .search .loader-line {
+	color: var(--teal);
+}
+
+.quick-launch-popup .search .search-icon {
+	font-family: var(--icons-font);
+	font-size: 18px;
+	color: var(--text);
+	padding-right: 8px;
+	min-width: 18px;
+}
+.quick-launch-popup .search .search-submit-icon {
+	font-family: var(--icons-font);
+	font-size: 18px;
+	color: var(--text);
+	min-width: 18px;
+}
+.quick-launch-popup .search .search-input {
+	background: transparent;
+	border: none;
+	color: var(--text);
+	font-size: var(--iconSize);
+	font-family: 'Segoe UI';
+	font-weight: var(--fontWeight);
+	padding: 4px 0;
+}
+/* Search prefix styling (e.g., ">" for commands) */
+.quick-launch-popup .search .prefix {
+	background: var(--teal);
+	border-radius: 4px;
+	color: var(--base);
+	padding: -2px 8px 0px 8px;
+	margin-top: 2px;
+	margin-right: 4px;
+	font-size: 13px;
+	font-weight: var(--fontWeight);
+	font-family: 'Segoe UI';
+	max-height: 28px;
+}
+/* Results list */
+.quick-launch-popup .results {
+	background: transparent;
+	padding: 8px;
+}
+/* Individual result item here you can set font szie for title */
+.quick-launch-popup .results-list-view {
+	font-size: 16px;
+	font-family: 'Segoe UI';
+	font-weight: var(--fontWeight);
+	color: var(--text);
+}
+.quick-launch-popup .results-list-view .description {
+	color: var(--subtext0);
+	font-size: 12px;
+	font-family: 'Segoe UI';
+	font-weight: var(--fontWeight);
+}
+.quick-launch-popup .results-list-view .separator {
+    color: var(--subtext0);
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    font-weight: var(--fontWeight);
+    padding: 4px 0 4px 12px;
+}
+/* Result item hover and selected states */
+.quick-launch-popup .results-list-view::item {
+	padding: 10px;
+    margin-top: 4px;
+	border-radius: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.quick-launch-popup .results-list-view::item:hover {
+    background-color: var(--mantle);
+}
+.quick-launch-popup .results-list-view::item:selected {
+	background-color: var(--surface1);
+    border-radius: 4px;
+}
+
+.quick-launch-popup .results-list-view::item:selected:hover {
+    background-color: var(--surface1);
+}
+/* Empty state when no results found */
+.quick-launch-popup .results-empty-text {
+	font-size: 24px;
+	font-family: 'Segoe UI';
+	color: var(--text);
+	padding-top: 8px;
+}
+
+/* System tray */
+.systray {
+    background-color: var(--base);
+    border-radius: 10px;
+    padding: 0 4px;
+}
+
+.systray .pinned-container.drop-target {
+    background-color: var(--surface1);
+}
+
+.systray .unpinned-visibility-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+}
+
+.systray-popup {
+    background-color: var(--base);
+    color: var(--text);
+    padding: 4px;
+    border: 1px solid var(--surface1);
+    border-radius: 12px;
+}
+
+.systray-popup .button {
+    background-color: transparent;
+    color: var(--text);
+    padding: 10px;
+    margin: 0;
+    border: none;
+    border-radius: 8px;
+}
+
+.systray-popup .button:hover {
+    background-color: var(--surface1);
+}
