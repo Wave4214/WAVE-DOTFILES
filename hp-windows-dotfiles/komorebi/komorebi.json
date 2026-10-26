@@ -7,24 +7,24 @@
     "workspace": {
       "kind": "SlideFade",
       "duration": 600,
-      "bezier": [0.05, 0.9, 0.1, 1.05],
-      "backdrop_blur": true,
+      "bezier": [0.22, 1, 0.36, 1],
+      "backdrop_blur": false,
       "backdrop_blur_radius": 30,
-      "shadow": true,
+      "shadow": false,
       "border": null
     },
     "windows": {
-      "duration": 400,
-      "bezier": [0.05, 0.9, 0.1, 1.05]
+      "duration": 120,
+      "bezier": [0.22, 1, 0.36, 1]
     }
   },
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
   "default_workspace_padding": 5,
-  "default_container_padding": 5,
+  "default_container_padding": 3,
   "transparency": true,
-  "transparency_alpha": 200,
+  "transparency_alpha": 400,
   "border": false,
   "border_width": 8,
   "border_offset": -1,

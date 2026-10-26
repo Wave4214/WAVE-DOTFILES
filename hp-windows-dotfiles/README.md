@@ -30,6 +30,16 @@ not included. Review local changes before pushing updates.
 - [PowerShell 7](https://github.com/PowerShell/PowerShell)
 - [Matugen](https://github.com/InioX/matugen)
 - [Superfile](https://github.com/yorukot/superfile), used by the `spf` shortcut.
+- [ani-cli](https://github.com/pystardust/ani-cli)
+- [btop](https://github.com/aristocratos/btop)
+- [Cava](https://github.com/karlstav/cava)
+- [Cargo](https://github.com/rust-lang/cargo), used to run the `rs-matrix` project.
+- [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
+- [Git for Windows](https://github.com/git-for-windows/git), including Git Bash for `ani-cli`.
+- [matrix-rain](https://www.npmjs.com/package/matrix-rain)
+- [Oh My Posh](https://github.com/JanDeDobbeleer/oh-my-posh)
+- [Winfetch](https://github.com/lptstr/winfetch)
+- [Yazi](https://github.com/sxyazi/yazi)
 
 Install the applications and any fonts referenced by your settings before
 applying their configuration. The Komorebi fork executables are not included.
